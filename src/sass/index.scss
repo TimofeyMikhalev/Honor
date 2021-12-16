@@ -7,6 +7,9 @@
 [data-ui-id='post'] {
   @media (min-width: 649px) {
     @import 'start';
+    @import 'menu';
+    @import 'promoblock';
+    @import 'content';
   }
 
   @media (max-width: 650px) {

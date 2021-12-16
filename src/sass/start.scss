@@ -1,23 +1,37 @@
-.startContainer {
-  display: none;
-  align-items: flex-start;
-  justify-content: flex-start;
-
-  width: 100%;
-  height: auto;
-
-  overflow: hidden;
-
-  z-index: 2;
-
-  .startContainer__wrapper {
+.header {
+  background-color: #f3f0ed;
+  display: flex;
+  justify-content: center;
+  &__inner {
+    width: get-vw(1020px, 1440);
+  }
+  &__inner p {
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 400;
+    font-size: get-vw(28px, 1440);
+    line-height: 1.2;
+    color: #000;
+    padding-bottom: get-vw(74px, 1440);
+  }
+  .container__header {
+    width: 81%;
+    justify-content: flex-start;
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-
-    width: 100%;
-    height: auto;
-
-    position: relative;
+  }
+}
+.header_text {
+  background-color: #f3f0ed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  .header_text_container {
+    width: get-vw(700px, 1440);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    font-size: get-vw(22px, 1440);
+    line-height: 1.1;
+    color: #000;
+    padding-bottom: get-vw(55px, 1440);
   }
 }

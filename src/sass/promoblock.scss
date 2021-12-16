@@ -1,0 +1,71 @@
+.promoblock {
+  background-color: #f3f0ed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: get-vw(50px, 1440);
+  .promoblock__container {
+    width: 61%;
+    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .promoblock__container_img {
+      width: get-vw(872px, 1440);
+      margin-bottom: get-vw(18px, 1440);
+      transition: all 0.4s;
+      &:hover {
+        opacity: 0.8;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    .promoblock__container_title {
+      width: get-vw(700px, 1440);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 500;
+      font-style: italic;
+      font-size: get-vw(54px, 1440);
+      color: #000;
+      padding-bottom: get-vw(40px, 1440);
+      text-align: center;
+      line-height: 1.2;
+    }
+    .promoblock__container_text {
+      width: get-vw(852px, 1440);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.1;
+      font-size: get-vw(22px, 1440);
+      color: #000;
+      margin-bottom: get-vw(46px, 1440);
+      text-align: center;
+    }
+    .promoblock__button {
+      padding-bottom: get-vw(60px, 1440);
+      .details__button {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: get-vw(20px, 1440);
+        line-height: 1.1;
+        text-align: center;
+        background-color: #000;
+        color: #ffffff;
+        border-radius: get-vw(10px, 1440);
+        border: none;
+        cursor: pointer;
+        padding: get-vw(10px, 1440) get-vw(50px, 1440) get-vw(13px, 1440)
+          get-vw(50px, 1440);
+
+        transition: all 0.5s;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
