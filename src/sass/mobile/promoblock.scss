@@ -4,17 +4,17 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-top: get-vw(50px, 1440);
+  padding-top: get-vw(40px, 320);
   .promoblock__container {
-    width: 61%;
+    width: 90%;
     justify-content: flex-start;
     display: flex;
     align-items: center;
     flex-direction: column;
 
     .promoblock__container_img {
-      width: get-vw(872px, 1440);
-      margin-bottom: get-vw(18px, 1440);
+      width: get-vw(290px, 320);
+      margin-bottom: get-vw(18px, 320);
       transition: all 0.4s;
       &:hover {
         opacity: 0.8;
@@ -27,24 +27,24 @@
       }
     }
     .promoblock__container_title {
-      width: get-vw(700px, 1440);
+      width: get-vw(290px, 320);
       font-family: var(--font-alt);
       font-weight: 500;
       font-style: italic;
-      font-size: get-vw(54px, 1440);
+      font-size: get-vw(32px, 320);
       color: #000;
-      padding-bottom: get-vw(40px, 1440);
+      padding-bottom: get-vw(25px, 320);
       text-align: center;
       line-height: 1.2;
     }
     .promoblock__container_text {
-      width: get-vw(852px, 1440);
+      width: get-vw(286px, 320);
       font-family: var(--font-alt);
       font-weight: 300;
       line-height: 1.1;
-      font-size: get-vw(22px, 1440);
+      font-size: get-vw(18px, 320);
       color: #000;
-      margin-bottom: get-vw(46px, 1440);
+      margin-bottom: get-vw(30px, 320);
       text-align: center;
       a {
         color: #000;
@@ -53,29 +53,29 @@
         font-family: var(--font-alt);
         font-weight: 300;
         color: #000;
-        font-size: get-vw(11px, 1440);
-        margin-bottom: get-vw(20px, 1440);
+        font-size: get-vw(11px, 320);
+        margin-bottom: get-vw(20px, 320);
         position: relative;
-        bottom: get-vw(10px, 1440);
+        bottom: get-vw(10px, 320);
       }
     }
     .promoblock__button {
-      padding-bottom: get-vw(60px, 1440);
+      padding-bottom: get-vw(60px, 320);
       .details__button {
         font-family: var(--font-alt);
         font-style: italic;
         font-weight: 300;
 
-        font-size: get-vw(20px, 1440);
+        font-size: get-vw(20px, 320);
         line-height: 1.1;
         text-align: center;
         background-color: #000;
         color: #ffffff;
-        border-radius: get-vw(10px, 1440);
+        border-radius: get-vw(10px, 320);
         border: none;
         cursor: pointer;
-        padding: get-vw(10px, 1440) get-vw(50px, 1440) get-vw(13px, 1440)
-          get-vw(50px, 1440);
+        width: get-vw(200px, 320);
+        height: get-vw(40px, 320);
 
         transition: all 0.5s;
 
@@ -87,6 +87,6 @@
   }
   .promoblock__container.action {
     position: relative;
-    margin-top: get-vw(-210px, 1440);
+    margin-top: get-vw(-210px, 320);
   }
 }

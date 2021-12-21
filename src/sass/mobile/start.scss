@@ -1,0 +1,26 @@
+.header {
+  background-color: #f3f0ed;
+  display: flex;
+  justify-content: center;
+  &__inner {
+    width: get-vw(280px, 320);
+  }
+  &__inner p {
+    font-family: var(--font-main);
+    font-weight: 400;
+    font-size: get-vw(18px, 320);
+    line-height: 1.28;
+    color: #000;
+    padding-bottom: get-vw(39px, 320);
+    // border-bottom: get-vw(1px, 320) solid #000;
+    a {
+      text-decoration: underline;
+      color: #000;
+    }
+  }
+  .container__header {
+    width: 90%;
+    justify-content: flex-start;
+    display: flex;
+  }
+}

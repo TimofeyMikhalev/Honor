@@ -1,3 +1,5 @@
+@import '_baseFonts';
+
 :root {
   --font-alt: 'IBM Plex Sans', sans-serif;
   --font-main: 'IBM Plex Serif', serif;
@@ -35,6 +37,7 @@
 /* OVER  */
 
 [data-ui-id='post'] {
+  padding: 0 !important;
   .villageSpecial__container {
     display: flex;
     justify-content: flex-start;
@@ -108,6 +111,9 @@
       transform: scale(0.95);
     }
   }
+  .screens-Article-ArticleContent-_-SuperFeature--SuperFeature__briefContainer {
+    display: none;
+  }
 }
 @media screen and (max-width: 850px) {
   [data-id='vtb-multibonus-1391'] .villageSpecial__container .interactiveItem {
@@ -121,5 +127,15 @@
     &:active {
       transform: scale(0.95);
     }
+  }
+  [data-stk-css='stkM1h1g']:not(#stk):not(#stk):not(style) {
+    font-family: IBM Plex Sans;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 10px;
+    color: #909090;
+    margin: 0 auto;
+    text-align: center;
+    width: 270px;
   }
 }

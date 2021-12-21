@@ -13,6 +13,9 @@
   }
 
   @media (max-width: 650px) {
-    @import 'mobile/mobile.scss';
+    @import 'mobile/start';
+    @import 'mobile/menu';
+    @import 'mobile/promoblock';
+    @import 'mobile/content';
   }
 }

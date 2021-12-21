@@ -6,12 +6,16 @@
     width: get-vw(1020px, 1440);
   }
   &__inner p {
-    font-family: 'IBM Plex Serif', serif;
+    font-family: var(--font-main);
     font-weight: 400;
     font-size: get-vw(28px, 1440);
-    line-height: 1.2;
+    line-height: 1.28;
     color: #000;
     padding-bottom: get-vw(74px, 1440);
+    a {
+      text-decoration: underline;
+      color: #000;
+    }
   }
   .container__header {
     width: 81%;
@@ -27,7 +31,7 @@
   text-align: center;
   .header_text_container {
     width: get-vw(700px, 1440);
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: var(--font-alt);
     font-weight: 300;
     font-size: get-vw(22px, 1440);
     line-height: 1.1;

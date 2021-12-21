@@ -2,37 +2,39 @@
   background-color: #f3f0ed;
   display: flex;
   justify-content: center;
-  padding-bottom: get-vw(73px, 1440);
+  padding-bottom: get-vw(44px, 320);
   .menu__container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    flex-direction: column;
     .menu__container_inner {
-      width: get-vw(408px, 1440);
-      height: get-vw(343px, 1440);
+      width: get-vw(290px, 320);
+      height: get-vw(270px, 320);
+      margin-bottom: get-vw(10px, 320);
       background-color: #fff;
-      border-radius: get-vw(20px, 1440);
+      border-radius: get-vw(20px, 320);
 
       cursor: pointer;
 
       transition: border-color 0.4s, opacity 0.4s;
 
-      border: get-vw(1px, 1440) solid rgba(0, 0, 0, 0);
+      border: get-vw(1px, 320) solid rgba(0, 0, 0, 0);
 
       .menu__inner_wrapper {
-        width: get-vw(342px, 1440);
+        width: get-vw(270px, 320);
         display: flex;
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;
         margin: 0 auto;
         .menu__wrapper_title {
-          font-size: get-vw(26px, 1440);
+          font-size: get-vw(24px, 320);
           line-height: 1.2;
           font-family: var(--font-alt);
           font-weight: 300;
-          padding-top: get-vw(50px, 1440);
-          margin-bottom: get-vw(48px, 1440);
+          padding-top: get-vw(34px, 320);
+          margin-bottom: get-vw(22px, 320);
           color: #000;
         }
 
@@ -40,16 +42,16 @@
           display: flex;
           align-items: center;
           justify-content: flex-start;
-          margin-bottom: get-vw(43px, 1440);
+          margin-bottom: get-vw(28px, 320);
           .menu__wrapper_box_img {
-            width: get-vw(150px, 1440);
+            width: get-vw(110px, 320);
             img {
               width: 100%;
             }
           }
 
           .menu__wrapper_box_procent {
-            font-size: get-vw(80px, 1440);
+            font-size: get-vw(60px, 320);
             line-height: 1.2;
             font-family: var(--font-alt);
             font-style: italic;
@@ -59,7 +61,24 @@
             -webkit-text-stroke-color: black;
             transition: color 0.3s;
             span {
-              font-size: get-vw(60px, 1440);
+              font-size: get-vw(40px, 320);
+              -webkit-text-stroke-width: 2px;
+              -webkit-text-stroke-color: black;
+            }
+          }
+          .menu__wrapper_box_procent3 {
+            font-size: get-vw(60px, 320);
+            line-height: 1.2;
+            font-family: var(--font-alt);
+            font-style: italic;
+            font-weight: 300;
+            color: #fff;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: black;
+            transition: color 0.3s;
+            margin-bottom: get-vw(17px, 320);
+            span {
+              font-size: get-vw(40px, 320);
               -webkit-text-stroke-width: 2px;
               -webkit-text-stroke-color: black;
             }
@@ -67,12 +86,19 @@
         }
 
         .menu__wrapper_text {
-          font-size: get-vw(18px, 1440);
+          font-size: get-vw(18px, 320);
+
           line-height: 1.2;
           font-family: var(--font-alt);
           font-weight: 300;
           text-align: center;
           color: #000;
+        }
+        .menu__wrapper_text2 {
+          width: get-vw(265px, 320);
+        }
+        .menu__wrapper_text3 {
+          width: get-vw(270px, 320);
         }
       }
 
@@ -86,28 +112,31 @@
           color: #000;
         }
       }
+      // .menu__wrapper_box_procent.action{
+      //     color: #000;
+      // }
     }
-
     .menu__container_inner2 {
-      width: get-vw(408px, 1440);
-      height: get-vw(343px, 1440);
+      width: get-vw(290px, 320);
+      height: get-vw(270px, 320);
       background-color: #fff;
-      border-radius: get-vw(20px, 1440);
-      margin: 0 get-vw(18px, 1440);
+      border-radius: get-vw(20px, 320);
+      margin: 0 get-vw(18px, 320);
+      margin-bottom: get-vw(10px, 320);
       .menu__inner_wrapper {
-        width: get-vw(342px, 1440);
+        width: get-vw(270px, 320);
         display: flex;
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;
         margin: 0 auto;
         .menu__wrapper_title {
-          font-size: get-vw(26px, 1440);
+          font-size: get-vw(24px, 320);
           line-height: 1.2;
           font-family: var(--font-alt);
           font-weight: 300;
-          padding-top: get-vw(50px, 1440);
-          margin-bottom: get-vw(48px, 1440);
+          padding-top: get-vw(34px, 320);
+          margin-bottom: get-vw(18px, 320);
           color: #000;
         }
 
@@ -115,16 +144,16 @@
           display: flex;
           align-items: center;
           justify-content: flex-start;
-          margin-bottom: get-vw(43px, 1440);
+          margin-bottom: get-vw(10px, 320);
           .menu__wrapper_box_img {
-            width: get-vw(150px, 1440);
+            width: get-vw(110px, 320);
             img {
               width: 100%;
             }
           }
 
           .menu__wrapper_box_procent {
-            font-size: get-vw(80px, 1440);
+            font-size: get-vw(60px, 320);
             line-height: 1.2;
             font-family: var(--font-alt);
             font-style: italic;
@@ -133,7 +162,7 @@
             -webkit-text-stroke-width: 2px;
             -webkit-text-stroke-color: black;
             span {
-              font-size: get-vw(60px, 1440);
+              font-size: get-vw(40px, 320);
               -webkit-text-stroke-width: 2px;
               -webkit-text-stroke-color: black;
             }
@@ -141,58 +170,42 @@
         }
 
         .menu__wrapper_text {
-          font-size: get-vw(18px, 1440);
+          font-size: get-vw(18px, 320);
           line-height: 1.2;
           font-family: var(--font-alt);
           font-weight: 300;
           text-align: center;
+          color: #000;
         }
       }
     }
     .menu__container_inner3 {
-      width: get-vw(408px, 1440);
-      height: get-vw(343px, 1440);
+      width: get-vw(290px, 320);
+      height: get-vw(270px, 320);
       background-color: #fff;
-      border-radius: get-vw(20px, 1440);
+      border-radius: get-vw(20px, 320);
       .menu__inner_wrapper3 {
-        width: get-vw(342px, 1440);
+        width: get-vw(270px, 320);
         display: flex;
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;
         margin: 0 auto;
         .menu__wrapper_title3 {
-          margin-bottom: get-vw(30px, 1440);
-          font-size: get-vw(26px, 1440);
+          margin-bottom: get-vw(30px, 320);
+          font-size: get-vw(26px, 320);
           line-height: 1.2;
           font-family: var(--font-alt);
           font-weight: 300;
-          padding-top: get-vw(50px, 1440);
+          padding-top: get-vw(34px, 320);
           color: #000;
         }
         .menu__wrapper_box3 {
-          margin-bottom: get-vw(15px, 1440);
+          margin-bottom: get-vw(0px, 320);
           .menu__wrapper_box_img3 {
-            width: get-vw(180px, 1440);
+            width: get-vw(110px, 320);
             img {
               width: 100%;
-            }
-          }
-          .menu__wrapper_box_procent3 {
-            font-size: get-vw(80px, 1440);
-            line-height: 1.2;
-            font-family: var(--font-alt);
-            font-style: italic;
-            font-weight: 300;
-            color: #fff;
-            -webkit-text-stroke-width: 2px;
-            -webkit-text-stroke-color: black;
-            transition: color 0.3s;
-            margin-bottom: get-vw(10px, 1440);
-            span {
-              font-size: get-vw(60px, 1440);
-              -webkit-text-stroke-width: 2px;
-              -webkit-text-stroke-color: black;
             }
           }
         }
@@ -200,7 +213,7 @@
     }
   }
   .menu__container_inner.action {
-    border: get-vw(1px, 1440) solid rgba(0, 0, 0, 1);
+    border: get-vw(1px, 320) solid rgba(0, 0, 0, 1);
     .menu__inner_wrapper .menu__wrapper_box .menu__wrapper_box_procent {
       color: #000;
     }

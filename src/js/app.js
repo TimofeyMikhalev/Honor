@@ -21,8 +21,9 @@
 
   function initJs() {
     // Тут начинается твой js-код
-
+    let contentContainer = document.querySelector('.content');
     //Меню
+    let menuContainer = document.querySelector('.menu');
 
     let tabs = [...document.querySelectorAll('.menu__container_inner')], //пункты меню
       tabsContent = document.querySelectorAll('.content__container'); // содержимое меню
@@ -38,9 +39,7 @@
         item.classList.remove('action');
       });
     }
-    // function removeAction(i = 0) {
-    //   tabs[i].classList.remove('action');
-    // }
+
     function addAction(i = 0) {
       tabs[i].classList.add('action');
     }
@@ -51,7 +50,7 @@
       tabsContent[i].classList.remove('hide');
       tabs[i].classList.add('action');
 
-      zenscroll.to(tabsContent[i]);
+      zenscroll.toY(getCoords(tabsContent[i]).top - 80);
     }
 
     // клик по кнопкам
@@ -74,18 +73,39 @@
       });
     });
 
+    tabs.forEach((tab) => {
+      configOfEventListeners(false, {
+        target: tab,
+        type: 'click',
+        func: addOpacityTwo,
+      });
+    });
+
+    tabs.forEach((tab) => {
+      configOfEventListeners(false, {
+        target: tab,
+        type: 'click',
+        func: closePopap,
+      });
+    });
+
     //Попапы
 
     let popapBtn = [...document.querySelectorAll('.content__button_popap')], //кнопки раскрыть
       popapContent = document.querySelectorAll('.content__popap'), // попапы
       btnClose = document.querySelectorAll('.popap__menu_close'), //Крестик
-      popapNextBtnOne = document.querySelector('.content__button_next1'),
-      popapNextBtn2 = document.querySelector('.content__button_next2'),
-      popapNextBtn3 = document.querySelector('.content__button_next3'),
-      popapNextBtn4 = document.querySelector('.content__button_next4'),
-      popapNextBtn5 = document.querySelector('.content__button_next5'),
-      popapNextBtn6 = document.querySelector('.content__button_next6'),
-      popapBtnClose = document.querySelectorAll('.content__button_close');
+      popupNextButtons = [
+        ...document.querySelectorAll('.content__button_next'),
+      ];
+
+    let content2 = document.querySelector('.content__box_items5'),
+      contentPopap2 = document.querySelector('.content__popap5'),
+      contentBrnPopap = document.querySelector('.content__button_popap3');
+    let promoblockContainer = document.querySelector('.promoblock__container');
+
+    let contentBlock = [...document.querySelectorAll('.content__box_items')];
+
+    let pervaiBlock = document.querySelector('.content__box_items6');
 
     // //скрыть пункты меню
     function hideTabPopap() {
@@ -101,26 +121,39 @@
       popapContent[i].classList.add('anim', 'show');
       popapContent[i].classList.remove('hide');
 
-      zenscroll.to(popapContent[i]);
+      content2.classList.add('hide');
+      contentPopap2.classList.remove('action');
+      pervaiBlock.classList.add('hide');
+
+      zenscroll.toY(getCoords(popapContent[i]).top - 80);
+
+      AOS.refresh();
     }
 
     // клик по кнопкам
 
     function trackClickPopap(event) {
       let target = event.currentTarget;
-      let target__index_popap = popapBtn.indexOf(target);
+      let target__index_popap = contentBlock.indexOf(target);
 
       hideTabPopap(target__index_popap);
       showTabPopap(target__index_popap);
     }
     function closePopap() {
       for (let i = 0; i < popapContent.length; i++) {
-        popapContent[i].classList.remove('anim', 'show');
+        popapContent[i].classList.remove('show');
         popapContent[i].classList.add('hide');
+        contentPopap2.classList.remove('action');
+        content2.classList.add('show');
+        content2.classList.remove('hide');
+        pervaiBlock.classList.remove('hide');
+        pervaiBlock.classList.add('show');
       }
+
+      AOS.refresh();
     }
 
-    popapBtn.forEach((popap) => {
+    contentBlock.forEach((popap) => {
       configOfEventListeners(false, {
         target: popap,
         type: 'click',
@@ -136,11 +169,11 @@
       });
     });
 
-    popapBtnClose.forEach((close) => {
+    btnClose.forEach((btn) => {
       configOfEventListeners(false, {
-        target: close,
+        target: btn,
         type: 'click',
-        func: closePopap,
+        func: addOpacityTwo,
       });
     });
 
@@ -156,98 +189,63 @@
     // })
 
     //Переход с первого на второй попап
-    function popapOne() {
-      popapContent[0].classList.remove('show');
-      popapContent[0].classList.add('hide');
 
-      popapContent[1].classList.remove('hide');
-      popapContent[1].classList.add('show', 'anim');
+    function openNextPopup(e) {
+      let target = e.currentTarget,
+        target__index = popupNextButtons.indexOf(target); // какой попап по счету
 
-      zenscroll.to(popapContent[1]);
+      let fourContent = document.querySelector('.content__box_items_four');
+
+      if (target.classList.contains('content__button_close')) {
+        //если это кнопка "ЗАВЕРШИТЬ"
+        closePopap();
+        addOpacityTwo();
+
+        setTimeout(() => zenscroll.toY(getCoords(menuContainer).top - 80), 100);
+        return false;
+      }
+
+      popapContent[target__index].classList.remove('show');
+      popapContent[target__index].classList.add('hide');
+
+      popapContent[target__index + 1].classList.remove('hide');
+      popapContent[target__index + 1].classList.add('show', 'anim');
+
+      zenscroll.toY(getCoords(popapContent[target__index + 1]).top - 80);
     }
-    popapNextBtnOne.addEventListener('click', popapOne);
 
-    function popap2() {
-      popapContent[2].classList.remove('show');
-      popapContent[2].classList.add('hide');
+    popupNextButtons.forEach((popupNextButton) => {
+      configOfEventListeners(false, {
+        target: popupNextButton,
+        type: 'click',
+        func: openNextPopup,
+      });
+    });
 
-      popapContent[3].classList.remove('hide');
-      popapContent[3].classList.add('show', 'anim');
+    //навесить opacity на карточки
 
-      zenscroll.to(popapContent[3]);
+    function addOpacity() {
+      contentBlock.forEach((item) => {
+        item.classList.add('two');
+        item.classList.remove('one');
+      });
     }
-    popapNextBtn2.addEventListener('click', popap2);
-
-    function popap3() {
-      popapContent[3].classList.remove('show');
-      popapContent[3].classList.add('hide');
-
-      popapContent[4].classList.remove('hide');
-      popapContent[4].classList.add('show', 'anim');
-
-      zenscroll.to(popapContent[4]);
+    function addOpacityTwo() {
+      contentBlock.forEach((item) => {
+        item.classList.add('one');
+        item.classList.remove('two');
+      });
     }
-    popapNextBtn3.addEventListener('click', popap3);
 
-    function popap4() {
-      popapContent[5].classList.remove('show');
-      popapContent[5].classList.add('hide');
+    contentBlock.forEach((contentBlock) => {
+      configOfEventListeners(false, {
+        target: contentBlock,
+        type: 'click',
+        func: addOpacity,
+      });
+    });
 
-      popapContent[6].classList.remove('hide');
-      popapContent[6].classList.add('show', 'anim');
-
-      zenscroll.to(popapContent[6]);
-    }
-    popapNextBtn4.addEventListener('click', popap4);
-
-    function popap5() {
-      popapContent[6].classList.remove('show');
-      popapContent[6].classList.add('hide');
-
-      popapContent[7].classList.remove('hide');
-      popapContent[7].classList.add('show', 'anim');
-
-      zenscroll.to(popapContent[7]);
-    }
-    popapNextBtn5.addEventListener('click', popap5);
-
-    function popap6() {
-      popapContent[7].classList.remove('show');
-      popapContent[7].classList.add('hide');
-
-      popapContent[8].classList.remove('hide');
-      popapContent[8].classList.add('show', 'anim');
-
-      zenscroll.to(popapContent[8]);
-    }
-    popapNextBtn6.addEventListener('click', popap6);
-
-    // console.log(popapNextBtnOne)
-
-    //Работа кнопак далее и завершить
-    // function nextPopapOne(event) {
-    //   let target = event.currentTarget;
-    //   let target__index_next = popapNextBtn.indexOf(target);
-    //     hideNextPopap(target__index_next)
-
-    // }
-    // function hideNextPopap() {
-    //   popapContent.forEach(item => {
-    //     item.classList.remove('action');
-
-    //   });
-    //   popapContent.forEach(item => {
-    //     item.classList.remove('action');
-    //     item.classList.add('action');
-
-    //   });
-    // }
-
-    // popapNextBtnOne.forEach(close  => {
-    //   configOfEventListeners(false, {target: close, type: 'click', func: nextPopapOne})
-    // })
-
-    //End
+    AOS.init();
   }
 
   configOfEventListeners(false, {
